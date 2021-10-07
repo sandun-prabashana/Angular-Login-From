@@ -1,10 +1,10 @@
 export class LoginDTO{
-    userName: any;
+    username: any;
     email: any;
     password: any;
 
-    constructor( userName: any, email: any, password: any) {
-      this.userName=userName;
+    constructor( username: any, email: any, password: any) {
+      this.username=username;
       this.email=email;
       this.password=password;
     }

@@ -15,15 +15,24 @@ export class LogInServiceService {
 
   signUp(dto: LoginDTO):Observable<any>{
     return this.httpClient.post(this.baseURL, {
-      username: dto.userName,
+      username: dto.username,
       email: dto.email,
       password: dto.password,
   });
 }
 
-  signIn(username: string):Observable<any>{
-    return this.httpClient.get(this.baseURL, {
-      headers: {username}
-    })
-  }
+signUpa(dto: LoginDTO):Observable<any>{
+  return this.httpClient.post(this.baseURL, {
+    username: dto.username,
+    email: dto.email,
+    password: dto.password,
+});
+}
+
+signIn(username: string,password: string):Observable<any>{
+  return this.httpClient.get(this.baseURL, {
+    headers: {username,password}
+  })
+}
+  
 }
