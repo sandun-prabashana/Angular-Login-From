@@ -29,6 +29,8 @@ export class SignInPageComponent implements OnInit {
     this.loginService.signIn(this.username,this.password).subscribe(respone => {
 
       if(respone.code == 200){
+
+        localStorage.setItem('token',respone.data);
         Swal.fire({
           title: 'User login Success !',
           text: 'token : '+ respone.data,
